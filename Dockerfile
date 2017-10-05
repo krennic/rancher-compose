@@ -4,7 +4,7 @@ FROM alpine:latest
 MAINTAINER Krennic
 
 # Define rancher-compose version
-ENV RANCHER_COMPOSE_VERSION=v0.8.6
+ENV RANCHER_COMPOSE_VERSION=v0.12.1
 
 # Install dependencies and rancher-compose
 RUN apk add --quiet --no-cache ca-certificates curl unzip && \
@@ -15,4 +15,4 @@ RUN apk add --quiet --no-cache ca-certificates curl unzip && \
 WORKDIR /workspace
 
 # Executing defaults
-CMD ["/bin/sh"]
+ENTRYPOINT ["rancher-compose"]
